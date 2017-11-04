@@ -1,0 +1,22 @@
+﻿<h1>Areas</h1>
+
+<p>This page lists all the areas for which we collect occupancy data</p>
+
+<p *ngIf="!areas"><em>Loading...</em></p>
+
+<table class='table' *ngIf="areas">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Parent</th>
+        </tr>      
+    </thead>
+    <tbody>
+        <tr *ngFor="let area of areas">
+            <td>{{ area.id }}</td>
+            <td>{{ area.name }}</td>
+            <td>{{ area.parent }}</td>
+        </tr>
+    </tbody>
+</table>

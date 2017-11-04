@@ -1,0 +1,41 @@
+﻿<h1>Occupancy Live</h1>
+
+<p *ngIf="!occupancyData"><em>Loading...</em></p>
+
+<div *ngIf="occupancyData" class="row">
+    <div class="col-md-12">
+        <div style="display: block;">
+            <canvas baseChart width="400" height="200"
+                    [datasets]="occupancyData"
+                    [labels]="lineChartLabels"
+                    [options]="lineChartOptions"
+                    [colors]="lineChartColors"
+                    [legend]="lineChartLegend"
+                    [chartType]="lineChartType"
+                    (chartHover)="chartHovered($event)"
+                    (chartClick)="chartClicked($event)"></canvas>
+        </div>
+    </div>
+    <div class="col-md-6" style="margin-bottom: 10px">
+        <table class="table table-responsive table-condensed">
+            <tr *ngFor="let d of lineChartData">
+                <td *ngFor="let label of lineChartLabels; let j=index">{{d && d.data[j]}}</td>
+            </tr>
+        </table>       
+    </div>
+</div>
+
+<table class='table' *ngIf="occupancyData">
+    <thead>
+        <tr>
+            <th>Data</th>
+            <th>Label</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let d of occupancyData">
+            <td>{{ d.data }}</td>
+            <td>{{ d.label }}</td>
+        </tr>
+    </tbody>
+</table>
