@@ -59,6 +59,45 @@ export class OccupancyLiveComponent {
             this.occupancyData = result.json() as ChartData[];
         }, error => console.error(error));
     }
+
+    public ngOnInit(): any
+    {
+        this.fillImage();
+        var c = document.getElementById("myCanvas") as HTMLCanvasElement;
+        var ctx = c.getContext("2d") as CanvasRenderingContext2D;
+        var imgData = ctx.getImageData(0, 0, 250, 250) as ImageData;
+        for (var i = 0; i < 20; i++) {
+            for (var j = 0; j < 20; j++) {
+
+
+                var y = 20 + j;
+                var x = 130 + i;
+
+                var pixelPos = (y * 250 + x) * 4;
+                imgData.data[pixelPos] = 255;
+                imgData.data[pixelPos + 1] = 0;
+                imgData.data[pixelPos + 2] = 0;
+                imgData.data[pixelPos + 3] = 255;
+            }
+        }
+        
+        ctx.putImageData(imgData, 0, 0);
+        
+
+    }
+
+    public fillImage() {
+        var c = document.getElementById("myCanvas") as HTMLCanvasElement;
+        var ctx = c.getContext("2d") as CanvasRenderingContext2D;
+        var img = document.getElementById("office") as HTMLImageElement;
+        ctx.drawImage(img, 0, 0);
+    }
+
+    public fillDesk(x: number, y: number) {
+       
+        
+        
+    }
 }
 
 interface ChartData {

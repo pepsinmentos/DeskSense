@@ -1,5 +1,7 @@
 ﻿<h1>Occupancy Live</h1>
 
+<canvas id="myCanvas"></canvas>
+
 <p *ngIf="!occupancyData"><em>Loading...</em></p>
 
 <div *ngIf="occupancyData" class="row">
@@ -39,3 +41,8 @@
         </tr>
     </tbody>
 </table>
+
+
+<div id="areaMap">
+    <img style="display: none" id="office" src="../../../../Content/img/office-image-1.jpg" />
+</div>

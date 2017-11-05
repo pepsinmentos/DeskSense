@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeskSense", "DeskSense\Desk
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeskSense.Tests", "DeskSense.Tests\DeskSense.Tests.csproj", "{C531C9E4-B04B-482D-838D-A611AF5DD20F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FEDeskSense", "FEDeskSense\FEDeskSense.csproj", "{C898D53C-2A80-45E8-89A6-BF9E6675024F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FEDeskSense", "FEDeskSense\FEDeskSense.csproj", "{C898D53C-2A80-45E8-89A6-BF9E6675024F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
