@@ -3,7 +3,9 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "test": "karma start ClientApp/test/karma.conf.js"
+    "test": "karma start ClientApp/test/karma.conf.js",
+    "build" : "webpack --config webpack.config.js",
+    "build" : "webpack --config webpack.config.vendor.js"
   },
   "dependencies": {
     "@angular/animations": "4.2.5",
@@ -24,8 +26,10 @@
     "aspnet-webpack": "^2.0.1",
     "awesome-typescript-loader": "3.2.1",
     "bootstrap": "3.3.7",
+    "build": "^0.1.4",
     "css": "2.2.1",
     "css-loader": "0.28.4",
+    "dev-build": "^1.1.0",
     "es6-shim": "0.35.3",
     "event-source-polyfill": "0.0.9",
     "expose-loader": "0.7.3",
@@ -44,7 +48,7 @@
     "to-string-loader": "1.1.5",
     "typescript": "2.4.1",
     "url-loader": "0.5.9",
-    "webpack": "2.5.1",
+    "webpack": "^2.7.0",
     "webpack-hot-middleware": "2.18.2",
     "webpack-merge": "4.1.0",
     "zone.js": "0.8.12"
