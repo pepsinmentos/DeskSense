@@ -61,6 +61,18 @@ namespace FEDeskSense.Controllers
             }).Select(dict => dict.Value);
         }
 
+        [HttpGet("[action]")]
+        public IEnumerable<Occupancy> OccupancyLatest()
+        {
+            return new List<Occupancy>()
+            {
+                new Occupancy {Id = "a1b2c3", X = 150, Y = 75, Occupied= new Random().Next(2) == 0 },
+                new Occupancy {Id = "d5e6f7", X = 210, Y = 90, Occupied= new Random().Next(2) == 0 },
+                new Occupancy {Id = "abcdef", X = 200, Y = 190, Occupied= new Random().Next(2) == 0 },
+                new Occupancy {Id = "ff424", X = 150, Y = 140, Occupied= new Random().Next(2) == 0 }
+            };
+        }
+
         public static List<OccupancyData> TestDataset()
         {
             return new List<OccupancyData>()
@@ -130,5 +142,13 @@ namespace FEDeskSense.Controllers
     {
         public List<float> Data { get; set; }
         public string Label { get; set; }
+    }
+
+    public class Occupancy
+    {
+        public string Id { get; set; }
+        public int X { get; set; }
+        public int Y { get; set; }
+        public bool Occupied { get; set; }
     }
 }
