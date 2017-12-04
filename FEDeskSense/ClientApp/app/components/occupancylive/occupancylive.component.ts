@@ -78,7 +78,7 @@ export class OccupancyLiveComponent {
         var ctx = c.getContext("2d") as CanvasRenderingContext2D;
         var image = new Image(60, 45);
 
-        image.src = "http://localhost:5000/dist/17535d3702b3baf3e3397b8fb9197275.jpg";
+        image.src = "../../dist/17535d3702b3baf3e3397b8fb9197275.jpg";
         var self = this;
         image.onload = function () {
             c.width = (this as HTMLImageElement).naturalWidth;
