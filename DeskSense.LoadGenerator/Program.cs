@@ -9,15 +9,8 @@ namespace DeskSense.LoadGenerator
 {
     class Program
     {
-        static int SLEEP_SECONDS = 10;
+        static int SLEEP_SECONDS = 60;
         static HttpClient client = new HttpClient();
-
-        static async Task PostOccupancy(List<OccupancyData> data)
-        {
-            HttpResponseMessage response = await client.PostAsJsonAsync("api/area/postoccupancy", data);
-            response.EnsureSuccessStatusCode();
-        }
-
 
         static void Main(string[] args)
         {
@@ -28,10 +21,18 @@ namespace DeskSense.LoadGenerator
             while (true)
             {
                 PostOccupancy(TestSet()).GetAwaiter().GetResult();
+                Console.WriteLine(DateTime.Now.ToString() + ": Posted data");
                 
                 System.Threading.Thread.Sleep(SLEEP_SECONDS * 1000);
             }
         }
+
+        static async Task PostOccupancy(List<OccupancyData> data)
+        {
+            HttpResponseMessage response = await client.PostAsJsonAsync("api/area/postoccupancy", data);
+            response.EnsureSuccessStatusCode();
+        }
+
 
         public static List<OccupancyData> TestSet()
         {
