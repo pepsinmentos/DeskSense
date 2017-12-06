@@ -34,6 +34,19 @@
 
   <ItemGroup>
     <Folder Include="Content\img\" />
+    <Folder Include="Content\scripts\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\dist\chartist\chartist.css" />
+    <None Include="wwwroot\dist\chartist\chartist.css.map" />
+    <None Include="wwwroot\dist\chartist\chartist.js" />
+    <None Include="wwwroot\dist\chartist\chartist.min.css" />
+    <None Include="wwwroot\dist\chartist\chartist.min.js" />
+    <None Include="wwwroot\dist\chartist\chartist.min.js.map" />
+    <None Include="wwwroot\dist\chartist\scss\chartist.scss" />
+    <None Include="wwwroot\dist\chartist\scss\settings\_chartist-settings.scss" />
+    <None Include="wwwroot\dist\main.js" />
   </ItemGroup>
 
   <ItemGroup>

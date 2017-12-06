@@ -2,9 +2,15 @@
     ViewData["Title"] = "Home Page";
 }
 
-<app asp-prerender-module="ClientApp/dist/main-server">Loading...</app>
+<div id="my-chart"></div>
+<canvas id="myCanvas"></canvas>
 
-<script src="~/dist/vendor.js" asp-append-version="true"></script>
+
 @section scripts {
-    <script src="~/dist/main-client.js" asp-append-version="true"></script>
+    <!--<script src="~/dist/main-client.js" asp-append-version="true"></script>-->
+    <script type="text/javascript" src="~/dist/fusioncharts/fusioncharts.js"></script>
+<script type="text/javascript" src="~/dist/fusioncharts/fusioncharts.charts.js"></script>
+<script type="text/javascript" src="~/dist/main.js"></script>
 }
+
+

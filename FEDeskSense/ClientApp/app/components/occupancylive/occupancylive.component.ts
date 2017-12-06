@@ -62,6 +62,7 @@ export class OccupancyLiveComponent {
     constructor(http: Http, @Inject('BASE_URL') baseUrl: string) {
         this.http = http;
         this.baseUrl = baseUrl;
+        window.onload = function () { alert("It's loaded!");  }
 
         http.get(baseUrl + 'api/Area/OccupancyLive').subscribe(result => {
             this.occupancyData = result.json() as ChartData[];
@@ -70,7 +71,8 @@ export class OccupancyLiveComponent {
 
     public ngOnInit(): any
     {
-        this.fillImage();
+        console.error("called on init");
+       // this.fillImage();
     }
 
     public fillImage() {
@@ -78,7 +80,7 @@ export class OccupancyLiveComponent {
         var ctx = c.getContext("2d") as CanvasRenderingContext2D;
         var image = new Image(60, 45);
 
-        image.src = "../../dist/17535d3702b3baf3e3397b8fb9197275.jpg";
+        image.src = "https://s3.eu-west-2.amazonaws.com/pepsinmentos/offic_layout.jpg";
         var self = this;
         image.onload = function () {
             c.width = (this as HTMLImageElement).naturalWidth;
